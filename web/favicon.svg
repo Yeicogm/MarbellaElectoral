@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- Fondo circular con el color de acento -->
+  <circle cx="32" cy="32" r="30" fill="#1d4ed8"/>
+  <!-- Sombra interior sutil -->
+  <circle cx="32" cy="32" r="26" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <!-- Papeleta: rectángulo blanco con la esquina doblada -->
+  <path d="M19 16 H41 L46 21 V48 H19 Z" fill="#ffffff"/>
+  <!-- Esquina doblada -->
+  <path d="M41 16 V21 H46 Z" fill="#e2e8f0"/>
+  <!-- Check de votación -->
+  <path d="M24 32 L29 37 L40 26" fill="none" stroke="#1d4ed8" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
