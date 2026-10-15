@@ -21,54 +21,55 @@ convocatorias (2015, 2019, 2023).
 
 ### 🎯 Modo oportunidad en detalle
 
-Pensado para responder a la pregunta: *"¿en qué secciones vale más la pena invertir esfuerzo para que mi
-partido escale posiciones?"*. Elige un partido y el modo calcula dos métricas por sección, ordenando el
+Pensado para responder a la pregunta: _"¿en qué secciones vale más la pena invertir esfuerzo para que mi
+partido escale posiciones?"_. Elige un partido y el modo calcula dos métricas por sección, ordenando el
 ranking por la más fácil de "ganar".
 
 #### Activación
 
-1. Click en el botón **🎯 Oportunidad** de la cabecera (junto a "Comparar años"). Los modos son
-   **mutuamente exclusivos**: activar Oportunidad desactiva Comparativa y viceversa.
+1. Click en el botón **🎯 Oportunidad** de la cabecera (junto a "Comparar años"). Los modos son **mutuamente
+   exclusivos**: activar Oportunidad desactiva Comparativa y viceversa.
 2. Aparece el selector **Partido** con todos los partidos del año activo que obtuvieron algún voto, ordenados
    por total de votos descendente (con su total entre paréntesis).
 3. La leyenda cambia de la paleta de ganadores a la **rampa de dificultad**:
-   - `muy fácil (≤20%)` · `fácil (≤40%)` · `medio (≤70%)` · `difícil (>70%)` · `ya ganada` · `sin candidatura`.
+   - `muy fácil (≤20%)` · `fácil (≤40%)` · `medio (≤70%)` · `difícil (>70%)` · `ya ganada` ·
+     `sin candidatura`.
 
 #### Métricas por sección (panel lateral)
 
-| Columna            | Significado                                                                                                          |
-| ------------------ | -------------------------------------------------------------------------------------------------------------------- |
-| **Sección**        | Distrito + sección censal (`D01-001`, etc.)                                                                          |
-| **Líder**          | Partido que actualmente gana esa sección (color e insignia del partido)                                              |
-| **Pos.**           | Posición del partido elegido en esa sección (`2º`, `3º`, …)                                                          |
-| **↑ Sig.**         | **Votos para pasar al siguiente partido** (el inmediatamente superior). `0` si hay empate.                           |
-| **↑ 1º**           | Votos para ganar la sección (diferencia con el líder). `—` si el partido ya es 1º.                                    |
-| **Reserva**        | `censo − votantes` = ciudadanos del censo que **no fueron a votar** (abstención). Es la "bolsa" de votos movilizables. |
-| **Dif.**           | `↑ Sig. ÷ Reserva` = **dificultad**, expresada en %. Cuanto menor, más fácil movilizar los votos que faltan de la abstención. `—` si la reserva es 0. |
-| **Part.**          | Participación de la sección (`votantes / censo`)                                                                     |
+| Columna     | Significado                                                                                                                                           |
+| ----------- | ----------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Sección** | Distrito + sección censal (`D01-001`, etc.)                                                                                                           |
+| **Líder**   | Partido que actualmente gana esa sección (color e insignia del partido)                                                                               |
+| **Pos.**    | Posición del partido elegido en esa sección (`2º`, `3º`, …)                                                                                           |
+| **↑ Sig.**  | **Votos para pasar al siguiente partido** (el inmediatamente superior). `0` si hay empate.                                                            |
+| **↑ 1º**    | Votos para ganar la sección (diferencia con el líder). `—` si el partido ya es 1º.                                                                    |
+| **Reserva** | `censo − votantes` = ciudadanos del censo que **no fueron a votar** (abstención). Es la "bolsa" de votos movilizables.                                |
+| **Dif.**    | `↑ Sig. ÷ Reserva` = **dificultad**, expresada en %. Cuanto menor, más fácil movilizar los votos que faltan de la abstención. `—` si la reserva es 0. |
+| **Part.**   | Participación de la sección (`votantes / censo`)                                                                                                      |
 
 #### Criterios de orden (botones en la cabecera del panel)
 
-- **Dificultad (vs abstención)** — *defecto*. Ordena por `Dif.` ascendente: las secciones más asequibles
-  (más fácil "comprar" los votos que faltan de la bolsa de no-votantes) aparecen arriba. Es la vista
+- **Dificultad (vs abstención)** — _defecto_. Ordena por `Dif.` ascendente: las secciones más asequibles (más
+  fácil "comprar" los votos que faltan de la bolsa de no-votantes) aparecen arriba. Es la vista
   **estratégica** para movilización.
 - **Votos para adelantar** — Ordena por `↑ Sig.` ascendente: las secciones donde necesitas menos votos
-  absolutos para pasar al siguiente partido, independientemente de la abstención. Es la vista
-  **táctica** para un esfuerzo limitado en papeletas/voluntarios.
+  absolutos para pasar al siguiente partido, independientemente de la abstención. Es la vista **táctica** para
+  un esfuerzo limitado en papeletas/voluntarios.
 
 #### Casos del ranking
 
-- **Secciones "asequibles"** (ranking principal, top 15 con botón "Ver todas"): el partido **no es 1º** y
-  la sección tiene censo y candidatos reales (se descartan las secciones sin electores).
-- **"A defender"** (panel inferior): secciones donde el partido **ya es 1º**, ordenadas por margen en
-  votos sobre el 2º. Indica dónde hay que proteger la ventaja.
+- **Secciones "asequibles"** (ranking principal, top 15 con botón "Ver todas"): el partido **no es 1º** y la
+  sección tiene censo y candidatos reales (se descartan las secciones sin electores).
+- **"A defender"** (panel inferior): secciones donde el partido **ya es 1º**, ordenadas por margen en votos
+  sobre el 2º. Indica dónde hay que proteger la ventaja.
 - **"Sin candidatura"** (gris tenue en el mapa): el partido no se presentó en esa sección. Excluidas del
   ranking.
 
 #### Mapa en este modo
 
-- **Rampa de color del partido**: la opacidad del color del partido elegido va de `0.85` (muy fácil) a
-  `0.40` (difícil) según la dificultad calculada.
+- **Rampa de color del partido**: la opacidad del color del partido elegido va de `0.85` (muy fácil) a `0.40`
+  (difícil) según la dificultad calculada.
 - **Tono neutro** del color del partido: secciones ya ganadas.
 - **Gris muy tenue**: secciones donde el partido no se presenta.
 - El **tooltip** del hover muestra los votos y la pp que faltan para adelantar, en vez del ganador.
@@ -76,8 +77,8 @@ ranking por la más fácil de "ganar".
 #### Navegación
 
 - **Click en una fila** del ranking → centra el mapa en esa sección y abre el panel de detalle estándar.
-- El panel de detalle muestra un botón **← Volver al ranking de oportunidad** arriba (solo en este modo)
-  para regresar al ranking con el mismo partido, año y criterio seleccionados.
+- El panel de detalle muestra un botón **← Volver al ranking de oportunidad** arriba (solo en este modo) para
+  regresar al ranking con el mismo partido, año y criterio seleccionados.
 - El modo es por sesión: al cambiar de año se recalculan las filas y se refresca el selector; al recargar la
   página se desactiva.
 
