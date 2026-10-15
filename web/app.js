@@ -84,7 +84,13 @@
    */
   function hexToRgb(hex) {
     const h = String(hex || "#6b7280").replace("#", "");
-    const full = h.length === 3 ? h.split("").map((c) => c + c).join("") : h;
+    const full =
+      h.length === 3
+        ? h
+            .split("")
+            .map((c) => c + c)
+            .join("")
+        : h;
     const n = parseInt(full, 16);
     return { r: (n >> 16) & 255, g: (n >> 8) & 255, b: n & 255 };
   }
@@ -98,7 +104,8 @@
     const props = feature.properties || {};
     const id = `${props.cdis}-${props.csec}`;
     const row = (state.opportunityRowsById || new Map()).get(id);
-    const baseHex = (state.geojson && state.geojson.palette && state.geojson.palette[state.opportunityParty]) || "#1d4ed8";
+    const baseHex =
+      (state.geojson && state.geojson.palette && state.geojson.palette[state.opportunityParty]) || "#1d4ed8";
     let fill;
     let opacity;
     if (!row) {
@@ -154,12 +161,13 @@
   function focusOnSection(sectionId) {
     const f = state.featureById.get(sectionId);
     if (!f) return;
-    const lyr = state.layer && state.layer.getLayers
-      ? state.layer.getLayers().find((l) => {
-          const p = l.feature && l.feature.properties;
-          return p && `${p.cdis}-${p.csec}` === sectionId;
-        })
-      : null;
+    const lyr =
+      state.layer && state.layer.getLayers
+        ? state.layer.getLayers().find((l) => {
+            const p = l.feature && l.feature.properties;
+            return p && `${p.cdis}-${p.csec}` === sectionId;
+          })
+        : null;
     if (lyr && lyr.getBounds && lyr.getBounds().isValid()) {
       state.map.fitBounds(lyr.getBounds(), { padding: [40, 40], maxZoom: 16 });
     }
@@ -425,7 +433,12 @@
         if (!r.votos || r.votos <= 0) continue;
         const k = r.siglas_canon;
         if (!k || k === "OTROS") continue; // excluimos OTROS por defecto del selector
-        const cur = totals.get(k) || { key: k, label: r.siglas_canon, color: colorBy[k] || r.color || "#6b7280", totalVotos: 0 };
+        const cur = totals.get(k) || {
+          key: k,
+          label: r.siglas_canon,
+          color: colorBy[k] || r.color || "#6b7280",
+          totalVotos: 0,
+        };
         cur.totalVotos += r.votos;
         totals.set(k, cur);
       }
@@ -550,7 +563,7 @@
     );
     const limit = state.opportunityShowAll ? rows.length : Math.min(15, rows.length);
     const topRows = rows.slice(0, limit);
-    const totalSecciones = (state.geojson && state.geojson.features) ? state.geojson.features.length : 0;
+    const totalSecciones = state.geojson && state.geojson.features ? state.geojson.features.length : 0;
     const sinCandidatura = totalSecciones - rows.length - defense.length;
 
     const baseHex = (state.geojson && state.geojson.palette && state.geojson.palette[party]) || "#1d4ed8";
@@ -613,15 +626,17 @@
         <th class="num">Part.</th>
       </tr>`;
 
-    const noRows = rows.length === 0
-      ? `<p style="font-size:13px;color:var(--text-muted);margin:8px 0 0">No hay secciones donde ${escapeHtml(party)} no sea primero y necesite adelantar.</p>`
-      : "";
+    const noRows =
+      rows.length === 0
+        ? `<p style="font-size:13px;color:var(--text-muted);margin:8px 0 0">No hay secciones donde ${escapeHtml(party)} no sea primero y necesite adelantar.</p>`
+        : "";
 
-    const seeAllBtn = rows.length > 15
-      ? `<button class="see-all-btn" id="opportunitySeeAll" type="button">${
-          state.opportunityShowAll ? "Ver solo top 15" : `Ver todas (${rows.length})`
-        }</button>`
-      : "";
+    const seeAllBtn =
+      rows.length > 15
+        ? `<button class="see-all-btn" id="opportunitySeeAll" type="button">${
+            state.opportunityShowAll ? "Ver solo top 15" : `Ver todas (${rows.length})`
+          }</button>`
+        : "";
 
     const html = `
       <div class="panel-section">
@@ -653,7 +668,9 @@
         ${noRows}
       </div>
 
-      ${defense.length > 0 ? `
+      ${
+        defense.length > 0
+          ? `
         <div class="panel-section">
           <p class="section-title">A defender (ya 1º)</p>
           <table class="opp-table">
@@ -664,7 +681,9 @@
           </table>
           <p style="font-size:11px;color:var(--text-muted);margin:4px 0 0">Click en una sección del mapa o de la tabla para ver el detalle.</p>
         </div>
-      ` : ""}
+      `
+          : ""
+      }
     `;
 
     document.getElementById("panelContent").innerHTML = html;

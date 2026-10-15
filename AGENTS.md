@@ -56,9 +56,9 @@ scripts/01-05_*.py          Pipeline en orden; cada script lee de processed y es
 - **GeoJSON final**: el esquema está documentado en el README raíz. Cada feature incluye `results[]` con
   `cod`, `siglas`, `denominacion`, `votos`, `pct`, `siglas_canon`, `color`. No eliminar campos: el panel
   lateral del frontend los consume.
-- **Modos de UI (mutuamente exclusivos)**: estándar (ganador → coropleta por `winner_color`),
-  comparativa (panel multi-año con `partyGroupKey`) y oportunidad (panel de ranking + coropleta de
-  rampa por `dificultad = gap_votos / (censo − votantes)`). Los tres se calculan en frontend sobre
+- **Modos de UI (mutuamente exclusivos)**: estándar (ganador → coropleta por `winner_color`), comparativa
+  (panel multi-año con `partyGroupKey`) y oportunidad (panel de ranking + coropleta de rampa por
+  `dificultad = gap_votos / (censo − votantes)`). Los tres se calculan en frontend sobre
   `web/data/{year}.geojson`; el pipeline Python no aporta datos extra para el modo oportunidad.
 
 ## 🧭 Convenciones de código
