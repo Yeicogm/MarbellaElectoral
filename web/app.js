@@ -3,12 +3,26 @@
   "use strict";
 
   const YEARS = ["2015", "2019", "2023"];
-  const DATA_PATH = "data";
+  // Base path para localizar `data/`, `style.css`, etc. Se auto-detecta a
+  // partir de la URL del script para que la misma build funcione en local
+  // (`/`, sin prefijo) y en GitHub Pages (`/<repo>/`, con prefijo).
+  // Truco: el `src` de `app.js` es `…/<base>/app.js`, así que su directorio
+  // es el base path del sitio.
+  const SCRIPT_BASE = (() => {
+    const s = document.currentScript;
+    if (s && s.src) {
+      // Quita el nombre del script y la query string, deja el directorio
+      const u = new URL(s.src, window.location.href);
+      return u.pathname.replace(/\/[^/]*$/, "/");
+    }
+    return "";
+  })();
+  const DATA_PATH = `${SCRIPT_BASE}data`;
   const MARBELLA_CENTER = [36.516, -4.883];
   const MARBELLA_ZOOM = 12;
 
   const state = {
-    year: "2019",
+    year: "2023",
     geojson: null,
     layer: null,
     map: null,
