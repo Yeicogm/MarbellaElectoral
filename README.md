@@ -84,31 +84,26 @@ ranking por la más fácil de "ganar".
 
 ## 🌐 Despliegue en GitHub Pages
 
-La web está preparada para servirse en GitHub Pages **sin tocar rutas ni
-paths**: el `app.js` auto-detecta el base path del sitio en tiempo de carga
-(lee su propio `src` para deducir el directorio). Esto hace que la misma
-build funcione en local (`http://localhost:8000/`) y en Pages
-(`https://<user>.github.io/<repo>/`) sin cambios.
+La web está preparada para servirse en GitHub Pages **sin tocar rutas ni paths**: el `app.js` auto-detecta el
+base path del sitio en tiempo de carga (lee su propio `src` para deducir el directorio). Esto hace que la
+misma build funcione en local (`http://localhost:8000/`) y en Pages (`https://<user>.github.io/<repo>/`) sin
+cambios.
 
 Hay un workflow de GitHub Actions ya configurado en
-[`.github/workflows/pages.yml`](.github/workflows/pages.yml) que despliega
-**solo la carpeta `web/`** a GitHub Pages en cada push a `main`. El
-repositorio tiene que tener Pages activado en modo **GitHub Actions**.
+[`.github/workflows/pages.yml`](.github/workflows/pages.yml) que despliega **solo la carpeta `web/`** a GitHub
+Pages en cada push a `main`. El repositorio tiene que tener Pages activado en modo **GitHub Actions**.
 
 ### Activación (1 click en GitHub)
 
 1. Sube los cambios a `main` (incluye el workflow).
 2. En el repo de GitHub, ve a **Settings → Pages**.
 3. En **Source** elige **GitHub Actions** (en lugar de "Deploy from a branch").
-4. El workflow `Deploy to GitHub Pages` se ejecuta automáticamente. Cuando
-   termine (≈ 30 s), la web estará en
+4. El workflow `Deploy to GitHub Pages` se ejecuta automáticamente. Cuando termine (≈ 30 s), la web estará en
    `https://<usuario>.github.io/<repo>/`.
 
-> ⚠️ **Por qué se ve el README en lugar de la web:** si al entrar a la URL
-> ves el `README.md` renderizado, es que GitHub Pages está sirviendo desde
-> la raíz del repo (modo "Deploy from a branch" apuntando a `main`).
-> Solución: cambia el Source a **GitHub Actions** y haz un push — el
-> workflow desplegará solo `web/`.
+> ⚠️ **Por qué se ve el README en lugar de la web:** si al entrar a la URL ves el `README.md` renderizado, es
+> que GitHub Pages está sirviendo desde la raíz del repo (modo "Deploy from a branch" apuntando a `main`).
+> Solución: cambia el Source a **GitHub Actions** y haz un push — el workflow desplegará solo `web/`.
 
 ## 🏗️ Arquitectura
 
