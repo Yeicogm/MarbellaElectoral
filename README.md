@@ -8,6 +8,8 @@ Visualizador web de resultados electorales de las elecciones municipales de Marb
 
 - **Mapa coroplético** de Marbella: cada sección censal se colorea según el partido ganador.
 - **Selector de año** (2015 / 2019 / 2023) en la cabecera.
+- **Modo comparativa** (panel lateral): para una sección, muestra la evolución 2015→2019→2023 con deltas en puntos porcentuales.
+- **Modo oportunidad** (panel lateral + coropleta de rampa): eligiendo un partido, calcula y rankea las secciones donde el esfuerzo es más efectivo para pasar al siguiente partido — combinando **votos mínimos para adelantar** y **ratio de dificultad** (gap ÷ abstención potencial). Las secciones se colorean con la rampa de intensidad del color del partido (muy fácil → muy difícil), con secciones ganadas en tono neutro y secciones sin candidatura en gris.
 - **Click en una sección** → panel con resultados completos (candidaturas, votos, %, participación).
 - Datos oficiales del **Ministerio del Interior** + geometría de **INE**.
 
@@ -109,7 +111,8 @@ python -m http.server 8000
 - [x] S3 — Frontend MVP (Leaflet, click → panel)
 - [x] S4 — Extender a 2015 y 2019
 - [x] S5 — Selector de año, leyenda, paleta consistente
-- [ ] S6 — Modo comparativa (slider 2 años lado a lado)
+- [x] S6 — Modo comparativa multi-año (panel lateral)
+- [x] S8 — Modo oportunidad: ranking de secciones por partido
 - [ ] S7 — Geocodificación de colegios electorales (Junta Electoral)
 
 ## 🔧 Detalles técnicos
