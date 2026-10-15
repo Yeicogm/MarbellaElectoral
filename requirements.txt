@@ -1,0 +1,11 @@
+# Core data
+pandas>=2.0
+geopandas>=0.14
+shapely>=2.0
+pyproj>=3.6
+
+# I/O
+requests>=2.31
+
+# Utilities
+tqdm>=4.66

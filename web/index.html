@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MarbellaElectoral · Resultados municipales</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="header-inner">
+      <div class="title-block">
+        <h1>🗳️ MarbellaElectoral</h1>
+        <p class="subtitle">Resultados de las elecciones municipales por sección censal</p>
+      </div>
+      <div class="controls">
+        <div class="year-selector" role="tablist">
+          <button class="year-btn" data-year="2015">2015</button>
+          <button class="year-btn active" data-year="2019">2019</button>
+          <button class="year-btn" data-year="2023">2023</button>
+        </div>
+        <div class="legend" id="legend"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="app-main">
+    <div id="map"></div>
+    <aside class="side-panel" id="sidePanel">
+      <button class="close-panel" id="closePanel" aria-label="Cerrar panel">×</button>
+      <div class="panel-content" id="panelContent">
+        <div class="empty-state">
+          <p>👆 Haz click en una sección del mapa para ver los resultados.</p>
+        </div>
+      </div>
+    </aside>
+    <div class="panel-backdrop" id="panelBackdrop"></div>
+  </main>
+
+  <footer class="app-footer">
+    <p>Datos: <a href="https://infoelectoral.interior.gob.es" target="_blank" rel="noopener">Ministerio del Interior</a> · Geometría: <a href="https://www.ine.es/dyngs/DAB/index.htm?cid=1389" target="_blank" rel="noopener">INE - Seccionado censal</a></p>
+  </footer>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+  <script src="app.js"></script>
+</body>
+</html>
